@@ -5,15 +5,18 @@ namespace alphaLogger
 {
 	class output
 	{
+	private:
+		enum m_outputType{File,Console,FC,Stream};
+		int m_type = 0;
 	public:
 		output()
 		{
-			m_outputType = 1;
+			m_type = 0;
 		}
-		output(enum t) :
-			m_outputType(t)
-	private:
-		enum m_outputType{"File","Console","FC","Stream"};
+		output(m_outputType t) :
+			m_type(t)
+		{}
+
 	};
 
 
